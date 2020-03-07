@@ -52,4 +52,6 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
+config :daily_tweet, :environment, :prod
+
 import_config "prod.secret.exs"

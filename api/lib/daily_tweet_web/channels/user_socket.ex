@@ -1,6 +1,7 @@
 defmodule DailyTweetWeb.UserSocket do
   use Phoenix.Socket
-
+  use Absinthe.Phoenix.Socket, schema: DailyTweetWeb.Schema
+  
   ## Channels
   # channel "room:*", DailyTweetWeb.RoomChannel
 

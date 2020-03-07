@@ -15,6 +15,9 @@ config :daily_tweet, DailyTweetWeb.Endpoint,
   pubsub: [name: DailyTweet.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "VF3ho8Xn"]
 
+config :daily_tweet,
+	   ecto_repos: [DailyTweet.Repo]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

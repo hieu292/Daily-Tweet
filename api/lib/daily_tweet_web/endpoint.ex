@@ -1,6 +1,14 @@
 defmodule DailyTweetWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :daily_tweet
-
+  use Absinthe.Phoenix.Endpoint
+  
+  origin =
+	  cond do
+		  Mix.env == :prod ->
+			  ["//*.firebase.com"]
+		  true -> ["*"]
+	  end
+  
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
@@ -11,7 +19,9 @@ defmodule DailyTweetWeb.Endpoint do
   ]
 
   socket "/socket", DailyTweetWeb.UserSocket,
-    websocket: true,
+    websocket: [
+		check_origin: (if Mix.env == :prod, do: origin, else: false)
+	],
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -43,5 +53,6 @@ defmodule DailyTweetWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug CORSPlug, origin: origin
   plug DailyTweetWeb.Router
 end
