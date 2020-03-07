@@ -1,1 +1,1 @@
-Daily-Tweet
+DailyTweet
