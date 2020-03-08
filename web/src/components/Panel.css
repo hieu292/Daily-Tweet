@@ -1,0 +1,9 @@
+.scroll-tab {
+    overflow-y: scroll;
+    height: 350px;
+    padding: 30px 10px 0 10px;
+}
+
+.long-tab {
+    height: 600px;
+}
