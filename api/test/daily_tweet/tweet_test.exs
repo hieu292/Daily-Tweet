@@ -4,24 +4,19 @@ defmodule DailyTweet.TweetTest do
 	alias DailyTweet.Model.Tweet
 	
 	@valid_attrs %{
-		body: "Li Europan lingues es membres del sam familie.
-			Lor separat existentie es un myth. Por scientie, musica,
-			sport etc"
+		body: Faker.Lorem.paragraph(1),
+		name: Faker.Name.first_name(),
+		avatar: Faker.Avatar.image_url()
 	}
 	
 	describe "Tweet.changeset/2" do
-		@invalid_empty_body_attrs %{
-			body: ""
-		}
-		@invalid_max_body_attrs %{
-			body: "Li Europan lingues es membres del sam familie.
-			Lor separat existentie es un myth. Por scientie, musica,
-			sport etc, litot Europa usa li sam vo"
-		}
+		@invalid_empty_body_attrs 	%{@valid_attrs | body: ""}
+		
+		@invalid_max_body_attrs 	%{@valid_attrs | body: Faker.Lorem.paragraph(10)}
 		
 		test "changeset with valid attributes" do
 			changeset = Tweet.changeset(%Tweet{}, @valid_attrs)
-			
+
 			assert changeset.valid?
 		end
 		

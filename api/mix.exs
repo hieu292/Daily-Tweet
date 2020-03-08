@@ -10,8 +10,13 @@ defmodule DailyTweet.MixProject do
 			compilers: [:phoenix, :gettext] ++ Mix.compilers(),
 			start_permanent: Mix.env() == :prod,
 			deps: deps(),
-			test_coverage: [tool: ExCoveralls],
-			preferred_cli_env: [coveralls: :test, "coveralls.html": :test]
+			test_coverage: [
+				tool: ExCoveralls
+			],
+			preferred_cli_env: [
+				coveralls: :test,
+				"coveralls.html": :test
+			]
 		]
 	end
 	
@@ -49,6 +54,8 @@ defmodule DailyTweet.MixProject do
 			{:absinthe, "~> 1.4.16"},
 			{:absinthe_plug, "~> 1.4.6"},
 			{:absinthe_phoenix, "~> 1.4.4"},
+			{:faker, "~> 0.13", only: :test},
+			{:ex_machina, "~> 2.3", only: :test},
 		]
 	end
 end

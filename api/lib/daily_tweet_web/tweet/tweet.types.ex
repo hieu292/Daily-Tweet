@@ -8,6 +8,8 @@ defmodule DailyTweetWeb.Tweet.Types do
 	object :parent_tweet do
 		field :id, :id
 		field :body, :string
+		field :name, :string
+		field :avatar, :string
 		field :retweet_count, :integer
 		field :updated_at, :string
 		field :inserted_at, :string
@@ -17,6 +19,8 @@ defmodule DailyTweetWeb.Tweet.Types do
 	object :tweet do
 		field :id, :id
 		field :body, :string
+		field :name, :string
+		field :avatar, :string
 		field :retweet_count, :integer
 		field :parent_id, :id
 		field :updated_at, :string
@@ -50,6 +54,8 @@ defmodule DailyTweetWeb.Tweet.Types do
 		field :create_tweet, :tweet do
 			arg(:parent_id, :id)
 			arg(:body, non_null(:string))
+			arg(:name, non_null(:string))
+			arg(:avatar, non_null(:string))
 			
 			resolve(&Resolver.create_tweet/3)
 		end

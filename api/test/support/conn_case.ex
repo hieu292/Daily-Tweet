@@ -22,6 +22,7 @@ defmodule DailyTweetWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       alias DailyTweetWeb.Router.Helpers, as: Routes
+	  import DailyTweet.Factory
 
       # The default endpoint for testing
       @endpoint DailyTweetWeb.Endpoint

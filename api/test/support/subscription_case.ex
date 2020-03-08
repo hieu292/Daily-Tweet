@@ -7,6 +7,7 @@ defmodule DailyTweetWeb.SubscriptionCase do
       # Import conveniences for testing with connections
       use DailyTweetWeb.ChannelCase
       use Absinthe.Phoenix.SubscriptionTest, schema: DailyTweetWeb.Schema
+	  import DailyTweet.Factory
 	  
 	  setup do
 		  {:ok, socket} = Phoenix.ChannelTest.connect(DailyTweetWeb.UserSocket, %{})

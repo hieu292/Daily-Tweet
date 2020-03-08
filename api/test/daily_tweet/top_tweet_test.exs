@@ -36,9 +36,6 @@ defmodule DailyTweet.TopTweetTest do
 		|> TopTweet.push()
 	end
 	
-	defp generate_tweet(id), do: %{
-		id: id,
-		body: "#{id}",
-		retweet_count: id
-	}
+	defp generate_tweet(id),
+		 do: insert(:tweet, retweet_count: id)
 end

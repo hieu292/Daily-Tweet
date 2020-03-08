@@ -7,9 +7,9 @@ defmodule DailyTweet.TweetResolverTest do
 	alias DailyTweet.Repo
 
 	@valid_attrs %{
-		body: "Li Europan lingues es membres del sam familie.
-			Lor separat existentie es un myth. Por scientie, musica,
-			sport etc"
+		body: Faker.Lorem.paragraph(1),
+		name: Faker.Name.first_name(),
+		avatar: Faker.Avatar.image_url()
 	}
 
 	describe "Resolver.create_tweet/3" do
