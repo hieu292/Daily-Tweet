@@ -5,7 +5,7 @@ defmodule DailyTweetWeb.Endpoint do
   origin =
 	  cond do
 		  Mix.env == :prod ->
-			  ["//*.firebase.com"]
+			  ["//*.firebaseapp.com"]
 		  true -> ["*"]
 	  end
   

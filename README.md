@@ -33,9 +33,11 @@ In detail, please take a look at `web/README.md`
 
 ## Deployment
 
+A live demo is [https://daily-tweet.firebaseapp.com/](https://daily-tweet.firebaseapp.com/)
+
 ### Backend
 
-For the demo, the server is running on Heroku [Heroku](https://heroku.com)
+For the demo, the server is running on [Heroku](https://heroku.com)
 
 1. Sign up and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
@@ -53,3 +55,17 @@ For the demo, the server is running on Heroku [Heroku](https://heroku.com)
    
    `git push heroku master`
 
+
+### Frontend
+
+For the demo, the hosting is running on Firebase [Heroku](https://heroku.com)
+
+1. Sign up and install firebase cli `npm install -g firebase-tools`
+
+2. `firebase login` and `firebase init`
+
+3.  Change api endpoint at .env
+
+4. `yarn build`
+
+3. `firebase deploy`
