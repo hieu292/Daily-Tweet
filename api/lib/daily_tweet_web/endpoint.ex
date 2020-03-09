@@ -20,7 +20,8 @@ defmodule DailyTweetWeb.Endpoint do
 
   socket "/socket", DailyTweetWeb.UserSocket,
     websocket: [
-		check_origin: (if Mix.env == :prod, do: origin, else: false)
+		check_origin: (if Mix.env == :prod, do: origin, else: false),
+		timeout: 45_000
 	],
     longpoll: false
 
