@@ -20,7 +20,7 @@
     "graphql-tag": "^2.10.3",
     "humps": "^2.0.1",
     "js-cookie": "^2.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "phoenix": "^1.4.15",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
